@@ -1,0 +1,14 @@
+#Thu Oct 13 21:46:20 BRT 2011
+eclipse.preferences.version=1
+encoding//mss/application/admin.py=utf-8
+encoding//mss/application/models.py=utf-8
+encoding//mss/context/admin.py=utf-8
+encoding//mss/context/models.py=utf-8
+encoding//mss/friendship/admin.py=utf-8
+encoding//mss/friendship/models.py=utf-8
+encoding//mss/invite/admin.py=utf-8
+encoding//mss/invite/models.py=utf-8
+encoding//mss/system/admin.py=utf-8
+encoding//mss/system/models.py=utf-8
+encoding//mss/users/admin.py=utf-8
+encoding//mss/users/models.py=utf-8
