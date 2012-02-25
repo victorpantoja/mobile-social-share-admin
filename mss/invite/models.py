@@ -27,6 +27,7 @@ class InviteEmail(models.Model):
 
     class Meta:
         db_table = "invite_email"
+        verbose_name_plural = "Email Invites"
 
     def __unicode__(self):
         return self.user.username
