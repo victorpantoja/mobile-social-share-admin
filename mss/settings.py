@@ -11,7 +11,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mss',
         'USER': 'root',
         'PASSWORD': '',
@@ -106,6 +106,8 @@ INSTALLED_APPS = (
     'invite',
     'system'
 )
+
+AUTH_PROFILE_MODULE = 'users.UserProfile'
 
 LOGGING = {
     'version': 1,

@@ -1,9 +1,10 @@
 #-*- coding: utf-8 -*-
 
 from django.contrib import admin
-from users.models import Users
+from users.models import UserProfile
 
-class UsersAdmin(admin.ModelAdmin):
-    list_display = ('lastname','firstname', 'username', 'gender', 'created', 'lastlogin')
 
-admin.site.register(Users, UsersAdmin)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'gender',)
+
+admin.site.register(UserProfile, UserProfileAdmin)
