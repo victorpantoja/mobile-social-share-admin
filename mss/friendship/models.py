@@ -15,4 +15,4 @@ class Friendship(models.Model):
         db_table = "friendship"
 
     def __unicode__(self):
-        return self.user.name
+        return self.user.username
