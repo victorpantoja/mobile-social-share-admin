@@ -8,13 +8,15 @@ var userProfile = {
     		var url = 'https://www.facebook.com/dialog/oauth?client_id=113400205406273&redirect_uri='+redirect_uri+'&response_type=token';
     		
     		var token;
+    		var socialNetwork = $(this).attr('id');
+    		console.log(socialNetwork);
     		
     		popupWindow = window.open(url,"_blank","toolbar=no, location=yes, directories=no, status=no, scrollbars=no, resizable=no, width=400, height=400, top=200, left=250");
     		
     		var watchClose = setInterval(function() {
     		    if (popupWindow.closed) {
     		    	clearTimeout(watchClose);
-    		    	userProfile._populateToken();
+    		    	userProfile._populateToken(socialNetwork);
     		    }
     		 }, 200);
     		
@@ -22,9 +24,11 @@ var userProfile = {
     	});
     },
     
-    _populateToken:function(){
-    	$.cookie('mss');
-    	$("#id_tokens").attr('value','{"facebook":"'+$.cookie('mss')+'"}');
+    _populateToken:function(socialNetwork){
+    	var json = JSON.parse($("#id_tokens").attr('value'));
+    	json[socialNetwork] = $.cookie('mss');
+    	
+    	$("#id_tokens").attr('value',JSON.stringify(json));
     }
 };
 
