@@ -14,7 +14,6 @@ var userProfile = {
     		var watchClose = setInterval(function() {
     		    if (popupWindow.closed) {
     		    	clearTimeout(watchClose);
-    		    	alert($.cookie('mss'));
     		    	userProfile._populateToken();
     		    }
     		 }, 200);
@@ -24,7 +23,8 @@ var userProfile = {
     },
     
     _populateToken:function(){
-    	$("#id_tokens").text("{'facebook':'alo'}");
+    	$.cookie('mss');
+    	$("#id_tokens").attr('value','{"facebook":"'+$.cookie('mss')+'"}');
     }
 };
 
