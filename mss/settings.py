@@ -1,10 +1,18 @@
 # Django settings for mss project.
 
+from os.path import dirname, abspath, join
+
+
+def get_local_file(path):
+    return (lambda *x: abspath(join(dirname(path), *x)))
+
+LOCAL_FILE = get_local_file(__file__)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Victor Pantoja', 'victor.pantoja@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -30,7 +38,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-MEDIA_ROOT = ''
+MEDIA_ROOT = LOCAL_FILE('media')
 
 MEDIA_URL = '/media/'
 
@@ -38,7 +46,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = 'static'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -85,9 +93,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'mss.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    LOCAL_FILE("users/templates"),
 )
 
 INSTALLED_APPS = (
