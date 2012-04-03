@@ -6,8 +6,16 @@
 	<body>
 	    <script type="text/javascript" charset="utf-8">
 	        $(document).ready(function(){
-	        	var token = dictFromHash(window.location.hash)
-	            $.cookie("mss", token["#access_token"], {'path':'/'});
+
+	        	var token = dictFromHash(window.location.hash)["#access_token"];
+	        	
+	        	if(token == undefined){
+	        		token = dictFromHash(window.location.hash)["access_token"];
+	        	}
+	        	
+	        	console.log(token);
+	        	
+	            $.cookie("mss", token, {'path':'/'});
 	            window.close()
 	        });
 	        
