@@ -13,8 +13,6 @@
 	        		token = dictFromHash(window.location.hash)["access_token"];
 	        	}
 	        	
-	        	console.log(token);
-	        	
 	            $.cookie("mss", token, {'path':'/'});
 	            window.close()
 	        });
