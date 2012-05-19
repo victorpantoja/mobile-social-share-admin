@@ -42,5 +42,5 @@ var userProfile = {
 };
 
 $(document).ready(function() {
-	userProfile.init()
+	userProfile.init();
 });
